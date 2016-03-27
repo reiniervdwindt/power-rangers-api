@@ -1,0 +1,24 @@
+#!/bin/bash
+# This deploy hook gets executed after dependencies are resolved and the
+# build hook has been run but before the application has been started back
+# up again.  This script gets executed directly, so it could be python, php,
+# ruby, etc.
+
+# source ${OPENSHIFT_HOMEDIR}python-2.6/virtenv/bin/activate
+
+# export PYTHON_EGG_CACHE=${OPENSHIFT_HOME_DIR}python-2.6/virtenv/lib/python-2.6/site-packages
+
+echo "Executing 'python ${OPENSHIFT_REPO_DIR}src/manage.py migrate --noinput'"
+python "$OPENSHIFT_REPO_DIR"src/manage.py migrate --noinput
+
+echo "Executing 'python ${OPENSHIFT_REPO_DIR}src/manage.py loaddata characters series'"
+python "$OPENSHIFT_REPO_DIR"src/manage.py loaddata characters series
+
+echo "Executing 'python ${OPENSHIFT_REPO_DIR}src/manage.py collectstatic --noinput -v0'"
+python "$OPENSHIFT_REPO_DIR"src/manage.py collectstatic --noinput -v0
+
+# echo "Creating symlink to static files"
+# if [ ! -d ${OPENSHIFT_DATA_DIR}/media ]; then
+#     mkdir ${OPENSHIFT_DATA_DIR}/media
+# fi
+ln -sf ${OPENSHIFT_REPO_DIR}/media ${OPENSHIFT_REPO_DIR}/wsgi/static/media

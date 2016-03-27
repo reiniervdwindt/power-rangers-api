@@ -1,0 +1,7 @@
+[run]
+omit =
+    *venv*
+    *virtualenv*
+
+[report]
+fail_under = 100

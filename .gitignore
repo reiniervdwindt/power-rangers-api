@@ -1,0 +1,29 @@
+# Local databases
+*.sqlite3
+
+# IDE generated stuff
+.idea
+
+# Compiled files
+*.pyc
+src/main/static/css
+
+# Cache
+.sass-cache
+
+# Virtual environments
+venv
+
+# Packages
+bower_components
+node_modules
+*.egg
+*.egg-info
+dist
+build
+
+# Development
+params.py
+
+# Generated files
+.coverage

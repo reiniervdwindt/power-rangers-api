@@ -1,0 +1,42 @@
+[
+    {
+        "model": "series.series",
+        "pk": 1,
+        "fields": {
+            "name": "Mighty Morphin Power Rangers",
+            "number": 1,
+            "year": 1993,
+            "parent": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 2,
+        "fields": {
+            "name": "Season 1",
+            "number": 1,
+            "year": 1993,
+            "parent": 1
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 3,
+        "fields": {
+            "name": "Season 2",
+            "number": 2,
+            "year": 1994,
+            "parent": 1
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 4,
+        "fields": {
+            "name": "Season 3",
+            "number": 3,
+            "year": 1995,
+            "parent": 1
+        }
+    }
+]

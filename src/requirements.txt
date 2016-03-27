@@ -1,0 +1,9 @@
+beautifulsoup4==4.4.1
+coverage==4.0.3
+Django==1.9.4
+django-nested-inline==0.3.6
+djangorestframework==3.3.3
+future==0.15.2
+isort==4.2.2
+Pillow==3.1.1
+requests==2.9.1
