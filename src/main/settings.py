@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # Packages
     'nested_inline',
     'rest_framework',
+    'rest_framework.authtoken',
 
     # Django
     'django.contrib.admin',
@@ -85,6 +86,10 @@ TEMPLATES = [
 ]
 
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
     'DEFAULT_THROTTLE_CLASSES': (
         'rest_framework.throttling.AnonRateThrottle',
     ),
