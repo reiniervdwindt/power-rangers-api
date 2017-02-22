@@ -11,28 +11,29 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPOSITORY_ROOT = os.path.dirname(BASE_DIR)
-MEDIA_ROOT = os.path.abspath(os.path.join(REPOSITORY_ROOT, 'media'))
-
-if 'OPENSHIFT_REPO_DIR' in os.environ:
-    STATIC_ROOT = os.path.abspath(
-        os.path.join(os.environ.get('OPENSHIFT_REPO_DIR'), 'wsgi', 'static'))  # pragma: no cover
-else:
-    STATIC_ROOT = os.path.abspath(os.path.join(REPOSITORY_ROOT, 'static'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
+env = environ.Env()
+if os.path.exists(os.path.join(REPOSITORY_ROOT, '.env')):  # pragma: no cover
+    environ.Env.read_env(os.path.join(REPOSITORY_ROOT, '.env'))
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('POWER_RANGERS_SECRET_KEY')
+SECRET_KEY = env.str('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env.bool('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = ['powerapi.blueyes.nl']
+ALLOWED_HOSTS = [
+    env.str('DJANGO_ALLOWED_HOST')
+]
 
 # Application definition
 
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -104,10 +106,7 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': env.db_url('DATABASE_URL', 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'))
 }
 
 # Password validation
@@ -144,10 +143,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = os.environ.get('POWER_RANGERS_MEDIA_URL') or '/static/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-try:
-    from params import *  # noqa
-except ImportError:  # pragma: no cover
-    pass
+STATIC_URL = env.str('DJANGO_STATIC_URL', '/static/')
+MEDIA_URL = env.str('DJANGO_MEDIA_URL', '/media/')
