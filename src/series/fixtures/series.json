@@ -38,5 +38,14 @@
             "year": 1995,
             "parent": 1
         }
+    },
+    {
+        "model": "series.episode",
+        "pk": 1,
+        "fields": {
+            "series": 2,
+            "name": "Day of the Dumpster",
+            "number": 1
+        }
     }
 ]
