@@ -24,6 +24,8 @@ build
 
 # Development
 params.py
+.env
 
 # Generated files
 .coverage
+src/static
