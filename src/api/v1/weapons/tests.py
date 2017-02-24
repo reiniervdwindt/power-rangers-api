@@ -1,9 +1,12 @@
+from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from characters.tests import CharactersTestCase
+from weapons import constants
 
 
-class WeaponsTestCase(CharactersTestCase):
+class WeaponsTestCase(TestCase):
+    fixtures = ['weapons.json']
+
     def test_weapon_list(self):
         resp = self.client.get(reverse('api:v1:weapon-list'))
 
@@ -20,10 +23,10 @@ class WeaponsTestCase(CharactersTestCase):
         self.assertEqual(resp.data['id'], 1)
 
         self.assertIn('name', resp.data)
-        self.assertEqual(resp.data['name'], 'Power Sword')
+        self.assertEqual(resp.data['name'], 'Dragon Dagger')
 
         self.assertIn('type', resp.data)
-        self.assertEqual(resp.data['type'], 'sword')
+        self.assertEqual(resp.data['type'], constants.WEAPON_TYPE_DAGGER)
 
     def test_weapon_not_found(self):
         resp = self.client.get(reverse('api:v1:weapon-detail', kwargs=dict(pk=9999)))

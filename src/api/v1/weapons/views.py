@@ -1,12 +1,15 @@
-from rest_framework import viewsets
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
-from api.v1.weapons.serializers import WeaponSerializer
-from characters.models import Weapon
+from api.v1.weapons.serializers import (WeaponDetailSerializer,
+                                        WeaponListSerializer)
+from weapons.models import Weapon
 
 
-class WeaponsViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    A simple ViewSet for viewing weapons
-    """
+class WeaponDetailView(RetrieveAPIView):
     queryset = Weapon.objects.all()
-    serializer_class = WeaponSerializer
+    serializer_class = WeaponDetailSerializer
+
+
+class WeaponListView(ListAPIView):
+    queryset = Weapon.objects.all()
+    serializer_class = WeaponListSerializer

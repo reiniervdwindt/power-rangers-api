@@ -1,0 +1,134 @@
+[
+    {
+        "model": "villains.villain",
+        "pk": 1,
+        "fields": {
+            "name": "Baboo",
+            "description": "Baboo is the more intelligent of a dimwitted duo consisting of him and Squatt. He is tall, slim, black, and vampiric, and resembles a cross between a monkey and a bat with crippled wings. He wears a monocle over his left eye and what appears to be a pocket watch on his chest. Like Finster, he mainly works behind the lines. Though spineless and scatterbrained, he is highly creative. He serves as Rita's alchemist and potion maker, creating substances and devices for her to use. Notable creations include a time device, a punk potion, the monster Shellshock, and the Knasty Knight's sword. Baboo is rarely confident in his mistress' plans, but would never say this to her face.\n",
+            "gender": "male",
+            "type": "henchman/alchemist",
+            "homeworld": "Planet of the Pongies",
+            "series": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "villains.villain",
+        "pk": 2,
+        "fields": {
+            "name": "Evil Mighty Morphin' Power Rangers",
+            "description": null,
+            "gender": null,
+            "type": null,
+            "homeworld": null,
+            "series": []
+        }
+    },
+    {
+        "model": "villains.villain",
+        "pk": 3,
+        "fields": {
+            "name": "Finster",
+            "description": "Finster, voiced by Robert Axelrod, was a henchmen of Rita Repulsa and Lord Zedd, though mostly the former. He resembled an anthropomorphic white Scottish Terrier.\n",
+            "gender": "male",
+            "type": "scientist",
+            "homeworld": "Claydoious",
+            "series": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "villains.villain",
+        "pk": 4,
+        "fields": {
+            "name": "Goldar",
+            "description": "Goldar (or Flydar in the pilot episode), is a powerful yet very overconfident warrior that served under the command of Rita Repulsa and Lord Zedd. He usually fought alongside Scorpina or Rito Revolto.\n",
+            "gender": "male",
+            "type": "general",
+            "homeworld": "Unknown",
+            "series": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "villains.villain",
+        "pk": 5,
+        "fields": {
+            "name": "Lord Zedd",
+            "description": "Lord Zedd is a major villain from the Mighty Morphin Power Rangers series and recurring through Power Rangers Zeo and Power Rangers in Space.",
+            "gender": "Male",
+            "type": "boss",
+            "homeworld": "Earth",
+            "series": []
+        }
+    },
+    {
+        "model": "villains.villain",
+        "pk": 6,
+        "fields": {
+            "name": "Mutant Rangers",
+            "description": null,
+            "gender": null,
+            "type": null,
+            "homeworld": null,
+            "series": []
+        }
+    },
+    {
+        "model": "villains.villain",
+        "pk": 7,
+        "fields": {
+            "name": "Putty Patrol",
+            "description": null,
+            "gender": null,
+            "type": null,
+            "homeworld": null,
+            "series": []
+        }
+    },
+    {
+        "model": "villains.villain",
+        "pk": 8,
+        "fields": {
+            "name": "Rita Repulsa",
+            "description": "Rita Repulsa was a female humanoid sorceress bent on intergalactic domination. Having conquered many worlds in the service of Lord Zedd, Rita was defeated by Zordon of Eltar during her failed invasion of Earth. Imprisoned in a space dumpster by the sage, Rita was cast into space where she would float for ten thousand years before arcing back to the moon. Once freed, she and her minions reclaimed their headquarters and started a second campaign on Earth to defeat Zordon and take the planet for Lord Zedd.\n",
+            "gender": "female",
+            "type": "boss",
+            "homeworld": "M51 Galaxy",
+            "series": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "villains.villain",
+        "pk": 9,
+        "fields": {
+            "name": "Scorpina",
+            "description": "Scorpina was one of Rita Repulsa's most ruthless and dangerous minions, besides Goldar, whom she frequently fought alongside.\n",
+            "gender": "female",
+            "type": "minion",
+            "homeworld": "Earth",
+            "series": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "villains.villain",
+        "pk": 10,
+        "fields": {
+            "name": "Squatt",
+            "description": "Squatt was a servant of Lord Zedd and Rita Repulsa, the dimwitted sidekick of Baboo. Squatt was a short, blue-skinned hobgoblin with a large horn. He wore metal armor, and looked like a mix between a blueberry and a warthog.\n",
+            "gender": "male",
+            "type": "henchman",
+            "homeworld": "Myrgo",
+            "series": [
+                2
+            ]
+        }
+    }
+]

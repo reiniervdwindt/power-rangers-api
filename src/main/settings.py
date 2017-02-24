@@ -40,9 +40,15 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     # Apps
+    'allies',
+    'civilians',
     'main',
-    'characters',
+    'monsters',
+    'rangers',
     'series',
+    'villains',
+    'weapons',
+    'zords',
 
     # Packages
     'rest_framework',

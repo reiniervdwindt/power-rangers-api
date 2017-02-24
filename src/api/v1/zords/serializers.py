@@ -1,12 +1,13 @@
 from rest_framework import serializers
 
-from characters.models import Ranger, Zord, ZordMode
+from rangers.models import Ranger
+from zords.models import Mode, Zord
 
 
 class ZordModeSerializer(serializers.ModelSerializer):
     class Meta(object):
         fields = ('id', 'name', 'description',)
-        model = ZordMode
+        model = Mode
 
 
 class ZordRangerSerializer(serializers.ModelSerializer):
@@ -21,11 +22,17 @@ class SubZordSerializer(serializers.ModelSerializer):
         model = Zord
 
 
-class ZordSerializer(serializers.ModelSerializer):
+class ZordDetailSerializer(serializers.ModelSerializer):
     parts = SubZordSerializer(many=True)
     modes = ZordModeSerializer(many=True)
     pilots = ZordRangerSerializer(many=True)
 
     class Meta(object):
         fields = ('id', 'name', 'description', 'type', 'modes', 'parts', 'pilots',)
+        model = Zord
+
+
+class ZordListSerializer(serializers.ModelSerializer):
+    class Meta(object):
+        fields = ('id', 'name', 'description', 'type',)
         model = Zord

@@ -1,11 +1,15 @@
-from collections import OrderedDict
-
+from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from characters.tests import CharactersTestCase
 
+class RangersTestCase(TestCase):
+    fixtures = [
+        'rangers.json',
+        'series.json',
+        'weapons.json',
+        'zords.json',
+    ]
 
-class RangersTestCase(CharactersTestCase):
     def test_ranger_list(self):
         resp = self.client.get(reverse('api:v1:ranger-list'))
 
@@ -27,8 +31,8 @@ class RangersTestCase(CharactersTestCase):
         self.assertIn('color', resp.data)
         self.assertEqual(resp.data['color'], 'red')
 
-        self.assertIn('weapon', resp.data)
-        self.assertIsInstance(resp.data['weapon'], OrderedDict)
+        self.assertIn('series', resp.data)
+        self.assertIsInstance(resp.data['series'], list)
 
     def test_ranger_not_found(self):
         resp = self.client.get(reverse('api:v1:ranger-detail', kwargs=dict(pk=9999)))

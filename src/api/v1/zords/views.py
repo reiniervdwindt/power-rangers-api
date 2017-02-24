@@ -1,12 +1,14 @@
-from rest_framework import viewsets
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
-from api.v1.zords.serializers import ZordSerializer
-from characters.models import Zord
+from api.v1.zords.serializers import ZordDetailSerializer, ZordListSerializer
+from zords.models import Zord
 
 
-class ZordsViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    A simple ViewSet for viewing zords
-    """
+class ZordDetailView(RetrieveAPIView):
     queryset = Zord.objects.all()
-    serializer_class = ZordSerializer
+    serializer_class = ZordDetailSerializer
+
+
+class ZordListView(ListAPIView):
+    queryset = Zord.objects.all()
+    serializer_class = ZordListSerializer

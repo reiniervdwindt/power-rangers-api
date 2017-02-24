@@ -17,11 +17,9 @@ class Series(models.Model):
         verbose_name_plural = 'series'
 
     def __str__(self):
-        return self.name
-
-    @property
-    def full_name(self):
-        return '{series} ({season})'.format(series=self.parent, season=self.name)
+        if self.parent:
+            return '{series} ({season})'.format(series=self.parent.name, season=self.name)
+        return '{name}'.format(name=self.name)
 
     @property
     def seasons(self):

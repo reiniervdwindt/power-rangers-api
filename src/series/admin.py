@@ -11,6 +11,7 @@ class SeasonsAdmin(admin.StackedInline):
 
 @admin.register(Series)
 class SeriesAdmin(admin.ModelAdmin):
+    exclude = ('parent',)
     inlines = (SeasonsAdmin,)
     list_display = ('name', 'number', 'year',)
     model = Series

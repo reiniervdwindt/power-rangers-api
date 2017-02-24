@@ -1,9 +1,10 @@
+from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from characters.tests import CharactersTestCase
 
+class VillainsTestCase(TestCase):
+    fixtures = ['villains.json']
 
-class VillainsTestCase(CharactersTestCase):
     def test_villain_list(self):
         resp = self.client.get(reverse('api:v1:villain-list'))
 
@@ -20,10 +21,10 @@ class VillainsTestCase(CharactersTestCase):
         self.assertEqual(resp.data['id'], 1)
 
         self.assertIn('name', resp.data)
-        self.assertEqual(resp.data['name'], 'Rita Repulsa')
+        self.assertEqual(resp.data['name'], 'Baboo')
 
         self.assertIn('description', resp.data)
-        self.assertRegexpMatches(resp.data['description'], '^Rita Repulsa was a female humanoid sorceress')
+        self.assertRegexpMatches(resp.data['description'], '^Baboo is the more intelligent of a dimwitted duo')
 
     def test_villain_not_found(self):
         resp = self.client.get(reverse('api:v1:villain-detail', kwargs=dict(pk=9999)))

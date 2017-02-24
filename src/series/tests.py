@@ -29,11 +29,7 @@ class SeriesTestCase(TestCase):
 
     def test_season_to_string(self):
         season = Series.objects.get(pk=2)
-        self.assertEqual(str(season), 'Season 1')
-
-    def test_season_full_name(self):
-        season = Series.objects.get(pk=2)
-        self.assertEqual(season.full_name, 'Mighty Morphin Power Rangers (Season 1)')
+        self.assertEqual(str(season), 'Mighty Morphin Power Rangers (Season 1)')
 
     def test_episode_to_string(self):
         episode = Episode.objects.get(pk=1)

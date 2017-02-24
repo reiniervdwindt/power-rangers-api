@@ -1,12 +1,15 @@
-from rest_framework import viewsets
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
-from api.v1.rangers.serializers import RangerSerializer
-from characters.models import Ranger
+from api.v1.rangers.serializers import (RangerDetailSerializer,
+                                        RangerListSerializer)
+from rangers.models import Ranger
 
 
-class RangersViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    A simple ViewSet for viewing rangers
-    """
+class RangerDetailView(RetrieveAPIView):
     queryset = Ranger.objects.all()
-    serializer_class = RangerSerializer
+    serializer_class = RangerDetailSerializer
+
+
+class RangerListView(ListAPIView):
+    queryset = Ranger.objects.all()
+    serializer_class = RangerListSerializer

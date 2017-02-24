@@ -1,9 +1,15 @@
 from rest_framework import serializers
 
-from characters.models import Civilian
+from civilians.models import Civilian
 
 
-class CivilianSerializer(serializers.ModelSerializer):
+class CivilianDetailSerializer(serializers.ModelSerializer):
+    class Meta(object):
+        fields = ('id', 'name', 'nickname', 'description',)
+        model = Civilian
+
+
+class CivilianListSerializer(serializers.ModelSerializer):
     class Meta(object):
         fields = ('id', 'name', 'nickname', 'description',)
         model = Civilian

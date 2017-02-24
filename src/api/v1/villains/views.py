@@ -1,12 +1,15 @@
-from rest_framework import viewsets
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
-from api.v1.villains.serializers import VillainSerializer
-from characters.models import Villain
+from api.v1.villains.serializers import (VillainDetailSerializer,
+                                         VillainListSerializer)
+from villains.models import Villain
 
 
-class VillainsViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    A simple ViewSet for viewing villains
-    """
+class VillainDetailView(RetrieveAPIView):
     queryset = Villain.objects.all()
-    serializer_class = VillainSerializer
+    serializer_class = VillainDetailSerializer
+
+
+class VillainListView(ListAPIView):
+    queryset = Villain.objects.all()
+    serializer_class = VillainListSerializer

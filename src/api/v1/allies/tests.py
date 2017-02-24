@@ -1,9 +1,13 @@
+from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from characters.tests import CharactersTestCase
 
+class AlliesTestCase(TestCase):
+    fixtures = [
+        'allies.json',
+        'series.json'
+    ]
 
-class AlliesTestCase(CharactersTestCase):
     def test_ally_list(self):
         resp = self.client.get(reverse('api:v1:ally-list'))
 

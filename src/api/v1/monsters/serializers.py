@@ -1,9 +1,15 @@
 from rest_framework import serializers
 
-from characters.models import Monster
+from monsters.models import Monster
 
 
-class MonsterSerializer(serializers.ModelSerializer):
+class MonsterDetailSerializer(serializers.ModelSerializer):
+    class Meta(object):
+        fields = ('id', 'name', 'description',)
+        model = Monster
+
+
+class MonsterListSerializer(serializers.ModelSerializer):
     class Meta(object):
         fields = ('id', 'name', 'description',)
         model = Monster

@@ -6,7 +6,9 @@
             "name": "Mighty Morphin Power Rangers",
             "number": 1,
             "year": 1993,
-            "parent": null
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
         }
     },
     {
@@ -16,7 +18,9 @@
             "name": "Season 1",
             "number": 1,
             "year": 1993,
-            "parent": 1
+            "parent": 1,
+            "imdb_id": null,
+            "trakt_id": null
         }
     },
     {
@@ -26,7 +30,9 @@
             "name": "Season 2",
             "number": 2,
             "year": 1994,
-            "parent": 1
+            "parent": 1,
+            "imdb_id": null,
+            "trakt_id": null
         }
     },
     {
@@ -36,7 +42,9 @@
             "name": "Season 3",
             "number": 3,
             "year": 1995,
-            "parent": 1
+            "parent": 1,
+            "imdb_id": null,
+            "trakt_id": null
         }
     },
     {
