@@ -48,6 +48,258 @@
         }
     },
     {
+        "model": "series.series",
+        "pk": 5,
+        "fields": {
+            "name": "Mighty Morphin Zeo",
+            "number": 4,
+            "year": 1996,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 6,
+        "fields": {
+            "name": "Power Rangers Turbo",
+            "number": 5,
+            "year": 1997,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 7,
+        "fields": {
+            "name": "Power Ranger in Space",
+            "number": 6,
+            "year": 1998,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 8,
+        "fields": {
+            "name": "Power Rangers Lost Galaxy",
+            "number": 7,
+            "year": 1999,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 9,
+        "fields": {
+            "name": "Power Rangers Lightspeed Rescue",
+            "number": 8,
+            "year": 2000,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 10,
+        "fields": {
+            "name": "Power Rangers Time Force",
+            "number": 9,
+            "year": 2001,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 11,
+        "fields": {
+            "name": "Power Rangers Wild Force",
+            "number": 10,
+            "year": 2002,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 12,
+        "fields": {
+            "name": "Power Rangers Ninja Storm",
+            "number": 11,
+            "year": 2003,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 13,
+        "fields": {
+            "name": "Power Rangers Dino Thunder",
+            "number": 12,
+            "year": 2004,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 14,
+        "fields": {
+            "name": "Power Rangers S.P.D.",
+            "number": 13,
+            "year": 2005,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 15,
+        "fields": {
+            "name": "Power Rangers Mystic Force",
+            "number": 14,
+            "year": 2006,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 16,
+        "fields": {
+            "name": "Power Rangers Operation Overdrive",
+            "number": 15,
+            "year": 2007,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 17,
+        "fields": {
+            "name": "Power Rangers Jungle Fury",
+            "number": 16,
+            "year": 2008,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 18,
+        "fields": {
+            "name": "Power Rangers RPM",
+            "number": 17,
+            "year": 2009,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 19,
+        "fields": {
+            "name": "Power Rangers Samurai",
+            "number": 18,
+            "year": 2010,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 20,
+        "fields": {
+            "name": "Power Rangers Super Samurai",
+            "number": 19,
+            "year": 2011,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 21,
+        "fields": {
+            "name": "Power Rangers Megaforce",
+            "number": 20,
+            "year": 2012,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 22,
+        "fields": {
+            "name": "Power Rangers Super Megaforce",
+            "number": 21,
+            "year": 2013,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 23,
+        "fields": {
+            "name": "Power Rangers Dino Charge",
+            "number": 22,
+            "year": 2014,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 24,
+        "fields": {
+            "name": "Power Rangers Dino Super Charge",
+            "number": 23,
+            "year": 2015,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
+        "model": "series.series",
+        "pk": 25,
+        "fields": {
+            "name": "Power Rangers Ninja Steel",
+            "number": 24,
+            "year": 2016,
+            "parent": null,
+            "imdb_id": null,
+            "trakt_id": null
+        }
+    },
+    {
         "model": "series.episode",
         "pk": 1,
         "fields": {

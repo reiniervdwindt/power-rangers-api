@@ -39,4 +39,4 @@ class SeriesTestCase(TestCase):
         ma = SeriesAdmin(Series, AdminSite())
         queryset = ma.get_queryset(request=object)
         self.assertIsInstance(queryset, QuerySet)
-        self.assertEqual(len(queryset), 1)
+        self.assertEqual(len(queryset), 22)
