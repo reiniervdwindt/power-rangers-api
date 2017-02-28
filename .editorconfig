@@ -1,0 +1,3 @@
+# Override for Makefile
+[makefile]
+indent_style = tab

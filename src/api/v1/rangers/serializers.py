@@ -1,6 +1,8 @@
 from rest_framework import serializers
 
-from characters.models import Ranger, Weapon, Zord
+from rangers.models import Appearance, Ranger
+from weapons.models import Weapon
+from zords.models import Zord
 
 
 class RangerWeaponSerializer(serializers.ModelSerializer):
@@ -15,14 +17,25 @@ class RangerZordSerializer(serializers.ModelSerializer):
         model = Zord
 
 
-class RangerSerializer(serializers.ModelSerializer):
+class SeriesSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(source='series')
     weapon = RangerWeaponSerializer()
-    zords = serializers.HyperlinkedRelatedField(
-        many=True,
-        read_only=True,
-        view_name='api:v1:zord-detail'
-    )
+    zord = RangerZordSerializer()
 
     class Meta(object):
-        fields = ('id', 'name', 'color', 'weapon', 'zords',)
+        fields = ('name', 'weapon', 'zord',)
+        model = Appearance
+
+
+class RangerDetailSerializer(serializers.ModelSerializer):
+    series = SeriesSerializer(source='appearance_set', many=True)
+
+    class Meta(object):
+        fields = ('id', 'name', 'color', 'series',)
+        model = Ranger
+
+
+class RangerListSerializer(serializers.ModelSerializer):
+    class Meta(object):
+        fields = ('id', 'name', 'color',)
         model = Ranger

@@ -1,9 +1,13 @@
+from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from characters.tests import CharactersTestCase
 
+class CiviliansTestCase(TestCase):
+    fixtures = [
+        'civilians.json',
+        'series.json',
+    ]
 
-class CiviliansTestCase(CharactersTestCase):
     def test_civilian_list(self):
         resp = self.client.get(reverse('api:v1:civilian-list'))
 
@@ -11,13 +15,13 @@ class CiviliansTestCase(CharactersTestCase):
         self.assertIsInstance(resp.data, list)
 
     def test_civilian_detail(self):
-        resp = self.client.get(reverse('api:v1:civilian-detail', kwargs=dict(pk=1)))
+        resp = self.client.get(reverse('api:v1:civilian-detail', kwargs=dict(pk=4)))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, dict)
 
         self.assertIn('id', resp.data)
-        self.assertEqual(resp.data['id'], 1)
+        self.assertEqual(resp.data['id'], 4)
 
         self.assertIn('name', resp.data)
         self.assertEqual(resp.data['name'], 'Farkas Bulkmeier')

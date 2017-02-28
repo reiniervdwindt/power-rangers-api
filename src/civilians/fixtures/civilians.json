@@ -1,0 +1,82 @@
+[
+    {
+        "model": "civilians.civilian",
+        "pk": 1,
+        "fields": {
+            "name": "Angela",
+            "nickname": null,
+            "description": "Angela was a minor character in the first season of Mighty Morphin Power Rangers. Angela served mostly as a love interest for Zack Taylor. Throughout the remainder of the first season, Zack attempts to gain the affections of Angela, often to no avail. She would turn him down several times before conceding to go on a date with him.",
+            "series": []
+        }
+    },
+    {
+        "model": "civilians.civilian",
+        "pk": 2,
+        "fields": {
+            "name": "Ernie",
+            "nickname": null,
+            "description": "Ernie was a supporting character from the show's early days through Power Rangers Zeo. He was the owner of the Angel Grove Youth Center, the most popular hang out spot for teens in the area. Ernie was around to lend a helping hand or advice to various characters and was often annoyed by Bulk and Skull's antics in the show's first season. He was also a fan of the Power Rangers.",
+            "series": []
+        }
+    },
+    {
+        "model": "civilians.civilian",
+        "pk": 3,
+        "fields": {
+            "name": "Eugene Skullovitch",
+            "nickname": "Skull",
+            "description": "Eugene \"Skull\" Skullovitch is a fictional character in the Power Rangers universe. He appeared as a permanent cast member from the original series of Mighty Morphin Power Rangers until Power Rangers in Space, and has also appeared few times after this. This makes him one of the longest-serving permanent cast members in Power Rangers.",
+            "series": []
+        }
+    },
+    {
+        "model": "civilians.civilian",
+        "pk": 4,
+        "fields": {
+            "name": "Farkas Bulkmeier",
+            "nickname": "Bulk",
+            "description": "Farkas \"Bulk\" Bulkmeier is a fictional character in the Power Rangers universe. He appeared as a permanent cast member from the original series of Mighty Morphin Power Rangers until Power Rangers: In Space, and has also appeared several times after this. This makes him one of the longest-serving permanent cast members in Power Rangers.",
+            "series": []
+        }
+    },
+    {
+        "model": "civilians.civilian",
+        "pk": 5,
+        "fields": {
+            "name": "Female",
+            "nickname": null,
+            "description": null,
+            "series": []
+        }
+    },
+    {
+        "model": "civilians.civilian",
+        "pk": 6,
+        "fields": {
+            "name": "Male",
+            "nickname": null,
+            "description": null,
+            "series": []
+        }
+    },
+    {
+        "model": "civilians.civilian",
+        "pk": 7,
+        "fields": {
+            "name": "Mr. Caplan",
+            "nickname": null,
+            "description": "Mr. Caplan is the principal of the Angel Grove High School. He alternated between being well-meaning and strict, but in some episodes he seemed more as a secondary antagonist, generally treating all of the students badly.",
+            "series": []
+        }
+    },
+    {
+        "model": "civilians.civilian",
+        "pk": 8,
+        "fields": {
+            "name": "Ms. Appleby",
+            "nickname": null,
+            "description": "Ms. Appleby was a character who appeared from the first season of Mighty Morphin Power Rangers through Power Rangers Turbo, portrayed by Royce Herron. She was a (multi-subject) school teacher at Angel Grove High School and one of the teachers of the original Power Rangers. Though she most often exuded a caring and comforting side, often taking interest in the activities of her students, she could easily be a strict disciplinarian, especially when confronted with the antics of Bulk and Skull.",
+            "series": []
+        }
+    }
+]

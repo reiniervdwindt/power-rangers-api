@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+
 import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -39,12 +40,17 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     # Apps
+    'allies',
+    'civilians',
     'main',
-    'characters',
+    'monsters',
+    'rangers',
     'series',
+    'villains',
+    'weapons',
+    'zords',
 
     # Packages
-    'nested_inline',
     'rest_framework',
     'rest_framework.authtoken',
 

@@ -1,0 +1,28 @@
+[
+    {
+        "model": "allies.ally",
+        "pk": 1,
+        "fields": {
+            "name": "Alpha 5",
+            "description": "Alpha 5 (Alpha for short) was the robotic assistant to the rangers during Mighty Morphin Power Rangers and Power Rangers Zeo, as well as the first few episodes of\u00a0Power Rangers Turbo. \u00a0Alpha was an extremely important factor in the Power Rangers' battle against evil and acted as a secondary mentor to them, under his friend, the wise sage Zordon of Eltar. Alpha would use the exclamation \"Ai yi yi\" in moments which invoked emotions of any kind, from panic to elation (most commonly panic); in more extreme situations, the exclamation could contain four \"yi\"'s, five \"yi\"'s or, in rare cases, six or seven \"yi\"'s; this has become a well-known catchphrase for most of the Alpha robots. He worked in the Command Center most of the time, only getting out on a few occasions, and almost always obeyed every command and order that Zordon issued. Surprisingly, while Alpha 5 is a robot, he has an amazing range of emotions that make him very humanlike.",
+            "series": [
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "allies.ally",
+        "pk": 2,
+        "fields": {
+            "name": "Zordon",
+            "description": "Zordon of Eltar was a wise galactic sage who fought for the side of good against the forces of evil. He was known particularly for the creation of the Power Rangers. He appeared in the original Mighty Morphin Power Rangers and remained a regular character until Power Rangers: Turbo, and died during the finale of Power Rangers in Space.",
+            "series": [
+                2,
+                3,
+                4
+            ]
+        }
+    }
+]

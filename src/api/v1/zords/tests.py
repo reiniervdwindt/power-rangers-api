@@ -1,9 +1,15 @@
+from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from characters.tests import CharactersTestCase
 
+class ZordsTestCase(TestCase):
+    fixtures = [
+        'rangers.json',
+        'series.json',
+        'weapons.json',
+        'zords.json',
+    ]
 
-class ZordsTestCase(CharactersTestCase):
     def test_zord_list(self):
         resp = self.client.get(reverse('api:v1:zord-list'))
 
@@ -20,10 +26,10 @@ class ZordsTestCase(CharactersTestCase):
         self.assertEqual(resp.data['id'], 1)
 
         self.assertIn('name', resp.data)
-        self.assertEqual(resp.data['name'], 'Tyrannosaurus Dinozord')
+        self.assertEqual(resp.data['name'], 'Dino Megazord')
 
         self.assertIn('description', resp.data)
-        self.assertRegexpMatches(resp.data['description'], '^Forming the head and torso')
+        self.assertRegexpMatches(resp.data['description'], '^The Megazord')
 
         self.assertIn('type', resp.data)
         self.assertEqual(resp.data['type'], 'dinozord')

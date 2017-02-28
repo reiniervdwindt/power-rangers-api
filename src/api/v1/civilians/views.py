@@ -1,12 +1,15 @@
-from rest_framework import viewsets
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
-from api.v1.civilians.serializers import CivilianSerializer
-from characters.models import Civilian
+from api.v1.civilians.serializers import (CivilianDetailSerializer,
+                                          CivilianListSerializer)
+from civilians.models import Civilian
 
 
-class CivilianViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    A simple ViewSet for viewing civilians
-    """
+class CivilianDetailView(RetrieveAPIView):
     queryset = Civilian.objects.all()
-    serializer_class = CivilianSerializer
+    serializer_class = CivilianDetailSerializer
+
+
+class CivilianListView(ListAPIView):
+    queryset = Civilian.objects.all()
+    serializer_class = CivilianListSerializer

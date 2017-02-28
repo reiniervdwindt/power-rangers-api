@@ -3,7 +3,7 @@ from django.db.models import QuerySet
 from django.test import TestCase
 
 from series.admin import SeriesAdmin
-from series.models import Series
+from series.models import Episode, Series
 
 
 class SeriesTestCase(TestCase):
@@ -29,11 +29,11 @@ class SeriesTestCase(TestCase):
 
     def test_season_to_string(self):
         season = Series.objects.get(pk=2)
-        self.assertEqual(str(season), 'Season 1')
+        self.assertEqual(str(season), 'Mighty Morphin Power Rangers (Season 1)')
 
-    def test_season_full_name(self):
-        season = Series.objects.get(pk=2)
-        self.assertEqual(season.full_name, 'Mighty Morphin Power Rangers (Season 1)')
+    def test_episode_to_string(self):
+        episode = Episode.objects.get(pk=1)
+        self.assertEqual(str(episode), 'Day of the Dumpster')
 
     def test_admin(self):
         ma = SeriesAdmin(Series, AdminSite())

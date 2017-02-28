@@ -1,0 +1,128 @@
+[
+    {
+        "model": "rangers.ranger",
+        "pk": 1,
+        "fields": {
+            "name": "Red Ranger",
+            "color": "red"
+        }
+    },
+    {
+        "model": "rangers.ranger",
+        "pk": 2,
+        "fields": {
+            "name": "Black Ranger",
+            "color": "black"
+        }
+    },
+    {
+        "model": "rangers.ranger",
+        "pk": 3,
+        "fields": {
+            "name": "Blue Ranger",
+            "color": "blue"
+        }
+    },
+    {
+        "model": "rangers.ranger",
+        "pk": 4,
+        "fields": {
+            "name": "Green Ranger",
+            "color": "green"
+        }
+    },
+    {
+        "model": "rangers.ranger",
+        "pk": 5,
+        "fields": {
+            "name": "Pink Ranger",
+            "color": "pink"
+        }
+    },
+    {
+        "model": "rangers.ranger",
+        "pk": 6,
+        "fields": {
+            "name": "White Ranger",
+            "color": "white"
+        }
+    },
+    {
+        "model": "rangers.ranger",
+        "pk": 7,
+        "fields": {
+            "name": "Yellow Ranger",
+            "color": "yellow"
+        }
+    },
+    {
+        "model": "rangers.appearance",
+        "pk": 1,
+        "fields": {
+            "ranger": 1,
+            "series": 2,
+            "weapon": 7,
+            "zord": 17
+        }
+    },
+    {
+        "model": "rangers.appearance",
+        "pk": 2,
+        "fields": {
+            "ranger": 1,
+            "series": 3,
+            "weapon": 7,
+            "zord": 10
+        }
+    },
+    {
+        "model": "rangers.appearance",
+        "pk": 3,
+        "fields": {
+            "ranger": 2,
+            "series": 2,
+            "weapon": 2,
+            "zord": 7
+        }
+    },
+    {
+        "model": "rangers.appearance",
+        "pk": 4,
+        "fields": {
+            "ranger": 3,
+            "series": 2,
+            "weapon": 6,
+            "zord": 16
+        }
+    },
+    {
+        "model": "rangers.appearance",
+        "pk": 5,
+        "fields": {
+            "ranger": 4,
+            "series": 2,
+            "weapon": 1,
+            "zord": 3
+        }
+    },
+    {
+        "model": "rangers.appearance",
+        "pk": 6,
+        "fields": {
+            "ranger": 5,
+            "series": 2,
+            "weapon": 4,
+            "zord": 9
+        }
+    },
+    {
+        "model": "rangers.appearance",
+        "pk": 7,
+        "fields": {
+            "ranger": 7,
+            "series": 2,
+            "weapon": 5,
+            "zord": 11
+        }
+    }
+]

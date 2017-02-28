@@ -1,17 +1,15 @@
 from rest_framework import serializers
 
-from characters.models import Ranger, Weapon
+from weapons.models import Weapon
 
 
-class WeaponRangerSerializer(serializers.ModelSerializer):
+class WeaponDetailSerializer(serializers.ModelSerializer):
     class Meta(object):
-        fields = ('id', 'name', 'color',)
-        model = Ranger
+        fields = ('id', 'name', 'type', 'parts')
+        model = Weapon
 
 
-class WeaponSerializer(serializers.ModelSerializer):
-    ranger = WeaponRangerSerializer()
-
+class WeaponListSerializer(serializers.ModelSerializer):
     class Meta(object):
-        fields = ('id', 'name', 'type', 'ranger',)
+        fields = ('id', 'name', 'type',)
         model = Weapon

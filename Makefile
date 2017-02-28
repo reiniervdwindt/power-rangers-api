@@ -1,6 +1,8 @@
-PIP=@`which pip`
-PYTHON=@`which python`
 COVERAGE=@`which coverage`
+ISORT=@`which isort`
+PIP=@`which pip`
+PROSPECTOR=@`which prospector`
+PYTHON=@`which python`
 
 clean:
 	@find ./src -name *.pyc -delete
@@ -16,5 +18,8 @@ serve:
 	$(PYTHON) src/manage.py runserver
 
 test:
+	$(PIP) install -q coverage mock isort prospector
+	$(PROSPECTOR) --messages-only --full-pep8
+	$(ISORT) --recursive --check-only --quiet src/$*
 	$(COVERAGE) run src/manage.py test src
 	$(COVERAGE) report -m

@@ -1,12 +1,14 @@
-from rest_framework import viewsets
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
-from api.v1.allies.serializers import AllySerializer
-from characters.models import Ally
+from allies.models import Ally
+from api.v1.allies.serializers import AllyDetailSerializer, AllyListSerializer
 
 
-class AllyViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    A simple ViewSet for viewing civilians
-    """
+class AllyDetailView(RetrieveAPIView):
     queryset = Ally.objects.all()
-    serializer_class = AllySerializer
+    serializer_class = AllyDetailSerializer
+
+
+class AllyListView(ListAPIView):
+    queryset = Ally.objects.all()
+    serializer_class = AllyListSerializer

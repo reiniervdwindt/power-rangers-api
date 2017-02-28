@@ -1,0 +1,71 @@
+[
+    {
+        "model": "weapons.weapon",
+        "pk": 1,
+        "fields": {
+            "name": "Dragon Dagger",
+            "type": "dagger",
+            "parts": []
+        }
+    },
+    {
+        "model": "weapons.weapon",
+        "pk": 2,
+        "fields": {
+            "name": "Power Axe",
+            "type": "dagger",
+            "parts": []
+        }
+    },
+    {
+        "model": "weapons.weapon",
+        "pk": 3,
+        "fields": {
+            "name": "Power Blaster",
+            "type": "dagger",
+            "parts": [
+                2,
+                4,
+                5,
+                6,
+                7
+            ]
+        }
+    },
+    {
+        "model": "weapons.weapon",
+        "pk": 4,
+        "fields": {
+            "name": "Power Bow",
+            "type": "dagger",
+            "parts": []
+        }
+    },
+    {
+        "model": "weapons.weapon",
+        "pk": 5,
+        "fields": {
+            "name": "Power Daggers",
+            "type": "dagger",
+            "parts": []
+        }
+    },
+    {
+        "model": "weapons.weapon",
+        "pk": 6,
+        "fields": {
+            "name": "Power Lance",
+            "type": "dagger",
+            "parts": []
+        }
+    },
+    {
+        "model": "weapons.weapon",
+        "pk": 7,
+        "fields": {
+            "name": "Power Sword",
+            "type": "sword",
+            "parts": []
+        }
+    }
+]

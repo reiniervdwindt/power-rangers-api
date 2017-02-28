@@ -1,21 +1,36 @@
-from rest_framework.routers import DefaultRouter
+from django.conf.urls import url
 
-from api.v1.allies.views import AllyViewSet
-from api.v1.civilians.views import CivilianViewSet
-from api.v1.monsters.views import MonsterViewSet
-from api.v1.rangers.views import RangersViewSet
-from api.v1.series.views import SeriesViewSet
-from api.v1.villains.views import VillainsViewSet
-from api.v1.weapons.views import WeaponsViewSet
-from api.v1.zords.views import ZordsViewSet
+from api.v1.allies.views import AllyDetailView, AllyListView
+from api.v1.civilians.views import CivilianDetailView, CivilianListView
+from api.v1.monsters.views import MonsterDetailView, MonsterListView
+from api.v1.rangers.views import RangerDetailView, RangerListView
+from api.v1.series.views import SeriesDetailView, SeriesListView
+from api.v1.villains.views import VillainDetailView, VillainListView
+from api.v1.weapons.views import WeaponDetailView, WeaponListView
+from api.v1.zords.views import ZordDetailView, ZordListView
 
-router = DefaultRouter()
-router.register(r'allies', AllyViewSet, base_name='ally')
-router.register(r'civilians', CivilianViewSet, base_name='civilian')
-router.register(r'monsters', MonsterViewSet, base_name='monster')
-router.register(r'rangers', RangersViewSet, base_name='ranger')
-router.register(r'series', SeriesViewSet, base_name='series')
-router.register(r'villains', VillainsViewSet, base_name='villain')
-router.register(r'weapons', WeaponsViewSet, base_name='weapon')
-router.register(r'zords', ZordsViewSet, base_name='zord')
-urlpatterns = router.urls
+urlpatterns = [
+    url(r'^allies$', AllyListView.as_view(), name='ally-list'),
+    url(r'^allies/(?P<pk>\d+)$', AllyDetailView.as_view(), name='ally-detail'),
+
+    url(r'^civilians$', CivilianListView.as_view(), name='civilian-list'),
+    url(r'^civilians/(?P<pk>\d+)$', CivilianDetailView.as_view(), name='civilian-detail'),
+
+    url(r'^monsters$', MonsterListView.as_view(), name='monster-list'),
+    url(r'^monsters/(?P<pk>\d+)$', MonsterDetailView.as_view(), name='monster-detail'),
+
+    url(r'^rangers$', RangerListView.as_view(), name='ranger-list'),
+    url(r'^rangers/(?P<pk>\d+)$', RangerDetailView.as_view(), name='ranger-detail'),
+
+    url(r'^series$', SeriesListView.as_view(), name='series-list'),
+    url(r'^series/(?P<pk>\d+)$', SeriesDetailView.as_view(), name='series-detail'),
+
+    url(r'^villains$', VillainListView.as_view(), name='villain-list'),
+    url(r'^villains/(?P<pk>\d+)$', VillainDetailView.as_view(), name='villain-detail'),
+
+    url(r'^weapons$', WeaponListView.as_view(), name='weapon-list'),
+    url(r'^weapons/(?P<pk>\d+)$', WeaponDetailView.as_view(), name='weapon-detail'),
+
+    url(r'^zords$', ZordListView.as_view(), name='zord-list'),
+    url(r'^zords/(?P<pk>\d+)$', ZordDetailView.as_view(), name='zord-detail'),
+]
