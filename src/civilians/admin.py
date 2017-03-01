@@ -12,7 +12,7 @@ class CivilianAdminForm(forms.ModelForm):
         widget=FilteredSelectMultiple('series', is_stacked=False)
     )
 
-    class Meta:
+    class Meta(object):
         model = Civilian
         exclude = ('pk',)
 

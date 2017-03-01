@@ -12,7 +12,7 @@ class VillainAdminForm(forms.ModelForm):
         widget=FilteredSelectMultiple('series', is_stacked=False)
     )
 
-    class Meta:
+    class Meta(object):
         model = Villain
         exclude = ('pk',)
 

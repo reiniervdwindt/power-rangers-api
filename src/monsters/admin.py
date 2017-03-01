@@ -12,7 +12,7 @@ class MonsterAdminForm(forms.ModelForm):
         widget=FilteredSelectMultiple('series', is_stacked=False)
     )
 
-    class Meta:
+    class Meta(object):
         model = Monster
         exclude = ('pk',)
 

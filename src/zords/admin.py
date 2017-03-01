@@ -11,7 +11,7 @@ class ZordAdminForm(forms.ModelForm):
         widget=FilteredSelectMultiple('zords', is_stacked=False)
     )
 
-    class Meta:
+    class Meta(object):
         model = Zord
         exclude = ('pk',)
 

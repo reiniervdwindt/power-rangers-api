@@ -11,7 +11,7 @@ class WeaponAdminForm(forms.ModelForm):
         widget=FilteredSelectMultiple('weapons', is_stacked=False)
     )
 
-    class Meta:
+    class Meta(object):
         model = Weapon
         exclude = ('pk',)
 
