@@ -5,11 +5,14 @@ from api.v1.civilians.views import CivilianDetailView, CivilianListView
 from api.v1.monsters.views import MonsterDetailView, MonsterListView
 from api.v1.rangers.views import RangerDetailView, RangerListView
 from api.v1.series.views import SeriesDetailView, SeriesListView
+from api.v1.views import APIRootView
 from api.v1.villains.views import VillainDetailView, VillainListView
 from api.v1.weapons.views import WeaponDetailView, WeaponListView
 from api.v1.zords.views import ZordDetailView, ZordListView
 
 urlpatterns = [
+    url(r'^$', APIRootView.as_view(), name='api-root'),
+
     url(r'^allies$', AllyListView.as_view(), name='ally-list'),
     url(r'^allies/(?P<pk>\d+)$', AllyDetailView.as_view(), name='ally-detail'),
 
