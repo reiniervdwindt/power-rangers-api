@@ -8,7 +8,8 @@ from zords.models import Mode, Zord
 class ZordAdminForm(forms.ModelForm):
     parts = forms.ModelMultipleChoiceField(
         queryset=Zord.objects.all(),
-        widget=FilteredSelectMultiple('zords', is_stacked=False)
+        widget=FilteredSelectMultiple('zords', is_stacked=False),
+        required=False
     )
 
     class Meta(object):

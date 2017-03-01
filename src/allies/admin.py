@@ -9,7 +9,8 @@ from series.models import Series
 class AllyAdminForm(forms.ModelForm):
     series = forms.ModelMultipleChoiceField(
         queryset=Series.objects.filter(series__isnull=True),
-        widget=FilteredSelectMultiple('series', is_stacked=False)
+        widget=FilteredSelectMultiple('series', is_stacked=False),
+        required=False
     )
 
     class Meta:
