@@ -1,7 +1,7 @@
 COVERAGE=@`which coverage`
 FLAKE8=@`which flake8`
 ISORT=@`which isort`
-PIP=@`which pip`
+POETRY=@`which poetry`
 PYTHON=@`which python`
 
 clean:
