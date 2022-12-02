@@ -1,6 +1,5 @@
-#Power Rangers API
-[![Build Status](https://travis-ci.org/reiniervdwindt/power-rangers-api.svg?branch=master)](https://travis-ci.org/reiniervdwindt/power-rangers-api)
-[![Code Health](https://landscape.io/github/reiniervdwindt/power-rangers-api/master/landscape.svg?style=flat)](https://landscape.io/github/reiniervdwindt/power-rangers-api/master)
+# Power Rangers API
+[![Django CI](https://github.com/reiniervdwindt/power-rangers-api/actions/workflows/django.yml/badge.svg?branch=master)](https://github.com/reiniervdwindt/power-rangers-api/actions/workflows/django.yml)
 
 ## Setup
 
