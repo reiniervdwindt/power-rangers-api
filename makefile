@@ -3,6 +3,7 @@ FLAKE8=@`which flake8`
 ISORT=@`which isort`
 POETRY=@`which poetry`
 PYTHON=@`which python`
+SAFETY=`which safety`
 
 clean:
 	@find ./src -name *.pyc -delete
