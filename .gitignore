@@ -6,12 +6,13 @@
 
 # Compiled files
 *.pyc
-src/main/static/css
+src/powerrangers/core/static/css
 
 # Cache
 .sass-cache
 
 # Virtual environments
+.python-version
 venv
 
 # Packages
