@@ -35,13 +35,13 @@ urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico'))
 ]
 
-router = routers.SimpleRouter(trailing_slash=False)
+router = routers.DefaultRouter(trailing_slash=False)
 router.register('allies', AllyModelViewSet)
 router.register('civilians', CivilianModelViewSet)
 router.register('episodes', EpisodeModelViewSet)
 router.register('monsters', MonsterModelViewSet)
 router.register('rangers', RangerModelViewSet)
-router.register('seasons', SeasonModelViewSet)
+router.register('seasons', SeasonModelViewSet, basename='seasons')
 router.register('series', SeriesModelViewSet)
 router.register('series/(?P<series_pk>[^/.]+)/seasons', SeasonModelViewSet)
 router.register('villains', VillainModelViewSet)

@@ -44,8 +44,27 @@ class SeriesTestCase(TestCase):
 
     def test_series_not_found(self):
         resp = self.client.get(reverse('series-detail', kwargs=dict(pk=9999)))
-
         self.assertEqual(resp.status_code, 404)
+
+    def test_series_seasons_list(self):
+        resp = self.client.get(reverse('series-seasons', args=(1, )))
+        self.assertEqual(resp.status_code, 200)
+
+    def test_series_episodes_list(self):
+        resp = self.client.get(reverse('series-episodes', args=(1, )))
+        self.assertEqual(resp.status_code, 200)
+
+    def test_seasons_list(self):
+        resp = self.client.get(reverse('seasons-list'))
+        self.assertEqual(resp.status_code, 200)
+
+    def test_seasons_detail(self):
+        resp = self.client.get(reverse('seasons-detail', args=(2, )))
+        self.assertEqual(resp.status_code, 200)
+
+    def test_seasons_episodes_list(self):
+        resp = self.client.get(reverse('seasons-episodes', args=(2, )))
+        self.assertEqual(resp.status_code, 200)
 
     def test_series(self):
         series = Series.objects.get(pk=1)
