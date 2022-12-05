@@ -23,7 +23,7 @@ from powerrangers.allies.views import AllyModelViewSet
 from powerrangers.civilians.views import CivilianModelViewSet
 from powerrangers.monsters.views import MonsterModelViewSet
 from powerrangers.rangers.views import RangerModelViewSet
-from powerrangers.series.views import SeriesModelViewSet, SeasonModelViewSet, EpisodeModelViewSet
+from powerrangers.series.views import EpisodeModelViewSet, SeasonModelViewSet, SeriesModelViewSet
 from powerrangers.villains.views import VillainModelViewSet
 from powerrangers.weapons.views import WeaponModelViewSet
 from powerrangers.zords.views import ZordModelViewSet

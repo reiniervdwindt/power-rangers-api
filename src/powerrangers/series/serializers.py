@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from powerrangers.series.models import Series, Episode
+from powerrangers.series.models import Episode, Series
 
 
 class EpisodeSerializer(serializers.ModelSerializer):

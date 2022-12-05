@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from powerrangers.core.mixins import MultiSerializerViewSetMixin
-from powerrangers.series.models import Series, Episode
-from powerrangers.series.serializers import SeriesSerializer, SeasonSerializer, EpisodeSerializer
+from powerrangers.series.models import Episode, Series
+from powerrangers.series.serializers import EpisodeSerializer, SeasonSerializer, SeriesSerializer
 
 
 class SeriesModelViewSet(MultiSerializerViewSetMixin, ModelViewSet):
