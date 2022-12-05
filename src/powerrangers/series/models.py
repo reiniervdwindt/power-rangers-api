@@ -1,5 +1,7 @@
 from django.db import models
 
+from powerrangers.series import querysets
+
 
 class Series(models.Model):
     name = models.CharField(max_length=128)
@@ -16,6 +18,8 @@ class Series(models.Model):
 
     imdb_id = models.CharField(max_length=9, unique=True, default=None, blank=True, null=True)
     trakt_id = models.IntegerField(unique=True, default=None, blank=True, null=True)
+
+    objects = querysets.SeriesQuerySet.as_manager()
 
     class Meta:
         ordering = ('year',)

@@ -23,7 +23,7 @@ from powerrangers.allies.views import AllyModelViewSet
 from powerrangers.civilians.views import CivilianModelViewSet
 from powerrangers.monsters.views import MonsterModelViewSet
 from powerrangers.rangers.views import RangerModelViewSet
-from powerrangers.series.views import SeriesModelViewSet
+from powerrangers.series.views import SeriesModelViewSet, SeasonModelViewSet, EpisodeModelViewSet
 from powerrangers.villains.views import VillainModelViewSet
 from powerrangers.weapons.views import WeaponModelViewSet
 from powerrangers.zords.views import ZordModelViewSet
@@ -35,12 +35,15 @@ urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico'))
 ]
 
-router = routers.DefaultRouter(trailing_slash=False)
+router = routers.SimpleRouter(trailing_slash=False)
 router.register('allies', AllyModelViewSet)
 router.register('civilians', CivilianModelViewSet)
+router.register('episodes', EpisodeModelViewSet)
 router.register('monsters', MonsterModelViewSet)
 router.register('rangers', RangerModelViewSet)
+router.register('seasons', SeasonModelViewSet)
 router.register('series', SeriesModelViewSet)
+router.register('series/(?P<series_pk>[^/.]+)/seasons', SeasonModelViewSet)
 router.register('villains', VillainModelViewSet)
 router.register('weapons', WeaponModelViewSet)
 router.register('zords', ZordModelViewSet)
