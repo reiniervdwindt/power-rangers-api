@@ -11,13 +11,13 @@ class MonsterTestCase(TestCase):
     ]
 
     def test_monster_list(self):
-        resp = self.client.get(reverse('monster-list'))
+        resp = self.client.get(reverse('monsters-list'))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, list)
 
     def test_monster_detail(self):
-        resp = self.client.get(reverse('monster-detail', kwargs=dict(pk=2)))
+        resp = self.client.get(reverse('monsters-detail', kwargs=dict(pk=2)))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, dict)
@@ -32,7 +32,7 @@ class MonsterTestCase(TestCase):
         self.assertRegexpMatches(resp.data['description'], '^Bones is a skeleton monster created by Finster')
 
     def test_monster_not_found(self):
-        resp = self.client.get(reverse('monster-detail', kwargs=dict(pk=9999)))
+        resp = self.client.get(reverse('monsters-detail', kwargs=dict(pk=9999)))
 
         self.assertEqual(resp.status_code, 404)
 

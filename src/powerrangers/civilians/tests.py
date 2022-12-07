@@ -11,13 +11,13 @@ class CivilianTestCase(TestCase):
     ]
 
     def test_civilian_list(self):
-        resp = self.client.get(reverse('civilian-list'))
+        resp = self.client.get(reverse('civilians-list'))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, list)
 
     def test_civilian_detail(self):
-        resp = self.client.get(reverse('civilian-detail', kwargs=dict(pk=4)))
+        resp = self.client.get(reverse('civilians-detail', kwargs=dict(pk=4)))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, dict)
@@ -32,7 +32,7 @@ class CivilianTestCase(TestCase):
         self.assertRegexpMatches(resp.data['description'], '^Farkas "Bulk" Bulkmeier is a fictional character')
 
     def test_civilian_not_found(self):
-        resp = self.client.get(reverse('civilian-detail', kwargs=dict(pk=9999)))
+        resp = self.client.get(reverse('civilians-detail', kwargs=dict(pk=9999)))
 
         self.assertEqual(resp.status_code, 404)
 

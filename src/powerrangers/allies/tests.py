@@ -11,13 +11,13 @@ class AllyTestCase(TestCase):
     ]
 
     def test_ally_list(self):
-        resp = self.client.get(reverse('ally-list'))
+        resp = self.client.get(reverse('allies-list'))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, list)
 
     def test_ally_detail(self):
-        resp = self.client.get(reverse('ally-detail', kwargs=dict(pk=1)))
+        resp = self.client.get(reverse('allies-detail', kwargs=dict(pk=1)))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, dict)
@@ -32,7 +32,7 @@ class AllyTestCase(TestCase):
         self.assertRegexpMatches(resp.data['description'], r'^Alpha 5 \(Alpha for short\) was the robotic assistant')
 
     def test_ally_not_found(self):
-        resp = self.client.get(reverse('ally-detail', kwargs=dict(pk=9999)))
+        resp = self.client.get(reverse('allies-detail', kwargs=dict(pk=9999)))
 
         self.assertEqual(resp.status_code, 404)
 

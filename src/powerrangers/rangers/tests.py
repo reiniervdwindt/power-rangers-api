@@ -14,13 +14,13 @@ class RangerTestCase(TestCase):
     ]
 
     def test_ranger_list(self):
-        resp = self.client.get(reverse('ranger-list'))
+        resp = self.client.get(reverse('rangers-list'))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, list)
 
     def test_ranger_detail(self):
-        resp = self.client.get(reverse('ranger-detail', kwargs=dict(pk=1)))
+        resp = self.client.get(reverse('rangers-detail', kwargs=dict(pk=1)))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, dict)
@@ -38,7 +38,7 @@ class RangerTestCase(TestCase):
         self.assertIsInstance(resp.data['series'], list)
 
     def test_ranger_not_found(self):
-        resp = self.client.get(reverse('ranger-detail', kwargs=dict(pk=9999)))
+        resp = self.client.get(reverse('rangers-detail', kwargs=dict(pk=9999)))
 
         self.assertEqual(resp.status_code, 404)
 

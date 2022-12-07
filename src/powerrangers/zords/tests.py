@@ -14,13 +14,13 @@ class ZordTestCase(TestCase):
     ]
 
     def test_zord_list(self):
-        resp = self.client.get(reverse('zord-list'))
+        resp = self.client.get(reverse('zords-list'))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, list)
 
     def test_zord_detail(self):
-        resp = self.client.get(reverse('zord-detail', kwargs=dict(pk=1)))
+        resp = self.client.get(reverse('zords-detail', kwargs=dict(pk=1)))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, dict)
@@ -38,7 +38,7 @@ class ZordTestCase(TestCase):
         self.assertEqual(resp.data['type'], 'dinozord')
 
     def test_zord_not_found(self):
-        resp = self.client.get(reverse('zord-detail', kwargs=dict(pk=9999)))
+        resp = self.client.get(reverse('zords-detail', kwargs=dict(pk=9999)))
 
         self.assertEqual(resp.status_code, 404)
 

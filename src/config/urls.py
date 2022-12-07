@@ -36,16 +36,16 @@ urlpatterns = [
 ]
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register('allies', AllyModelViewSet)
-router.register('civilians', CivilianModelViewSet)
-router.register('episodes', EpisodeModelViewSet)
-router.register('monsters', MonsterModelViewSet)
-router.register('rangers', RangerModelViewSet)
+router.register('allies', AllyModelViewSet, basename='allies')
+router.register('civilians', CivilianModelViewSet, basename='civilians')
+router.register('episodes', EpisodeModelViewSet, basename='episodes')
+router.register('monsters', MonsterModelViewSet, basename='monsters')
+router.register('rangers', RangerModelViewSet, basename='rangers')
 router.register('seasons', SeasonModelViewSet, basename='seasons')
-router.register('series', SeriesModelViewSet)
-router.register('series/(?P<series_pk>[^/.]+)/seasons', SeasonModelViewSet)
-router.register('villains', VillainModelViewSet)
-router.register('weapons', WeaponModelViewSet)
-router.register('zords', ZordModelViewSet)
+router.register('series', SeriesModelViewSet, basename='series')
+router.register('series/(?P<series_pk>[^/.]+)/seasons', SeasonModelViewSet, basename='series-seasons')
+router.register('villains', VillainModelViewSet, basename='villains')
+router.register('weapons', WeaponModelViewSet, basename='weapons')
+router.register('zords', ZordModelViewSet, basename='zords')
 
 urlpatterns += router.urls

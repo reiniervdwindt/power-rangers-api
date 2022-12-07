@@ -11,13 +11,13 @@ class VillainTestCase(TestCase):
     ]
 
     def test_villain_list(self):
-        resp = self.client.get(reverse('villain-list'))
+        resp = self.client.get(reverse('villains-list'))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, list)
 
     def test_villain_detail(self):
-        resp = self.client.get(reverse('villain-detail', kwargs=dict(pk=1)))
+        resp = self.client.get(reverse('villains-detail', kwargs=dict(pk=1)))
 
         self.assertEqual(resp.status_code, 200)
         self.assertIsInstance(resp.data, dict)
@@ -32,7 +32,7 @@ class VillainTestCase(TestCase):
         self.assertRegexpMatches(resp.data['description'], '^Baboo is the more intelligent of a dimwitted duo')
 
     def test_villain_not_found(self):
-        resp = self.client.get(reverse('villain-detail', kwargs=dict(pk=9999)))
+        resp = self.client.get(reverse('villains-detail', kwargs=dict(pk=9999)))
 
         self.assertEqual(resp.status_code, 404)
 
