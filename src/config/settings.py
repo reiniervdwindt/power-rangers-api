@@ -179,6 +179,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Power Rangers API',
     'DESCRIPTION': 'Power Rangers API',
-    'VERSION': env.str('VERSION'),
+    'VERSION': env.str('VERSION', default=None),
     'SERVE_INCLUDE_SCHEMA': False,
 }
