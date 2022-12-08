@@ -1,7 +1,7 @@
 from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from powerrangers.weapons import constants
+from powerrangers.weapons.choices import Category
 from powerrangers.weapons.models import Weapon
 
 
@@ -26,8 +26,8 @@ class WeaponTestCase(TestCase):
         self.assertIn('name', resp.data)
         self.assertEqual(resp.data['name'], 'Dragon Dagger')
 
-        self.assertIn('type', resp.data)
-        self.assertEqual(resp.data['type'], constants.WEAPON_TYPE_DAGGER)
+        self.assertIn('category', resp.data)
+        self.assertEqual(resp.data['category'], Category.DAGGER)
 
     def test_weapon_not_found(self):
         resp = self.client.get(reverse('weapons-detail', kwargs=dict(pk=9999)))
@@ -38,7 +38,7 @@ class WeaponTestCase(TestCase):
         weapon = Weapon.objects.get(pk=1)
         self.assertIsInstance(weapon, Weapon)
         self.assertEqual(weapon.name, 'Dragon Dagger')
-        self.assertEqual(weapon.type, constants.WEAPON_TYPE_DAGGER)
+        self.assertEqual(weapon.category, Category.DAGGER)
 
     def test_weapon_to_string(self):
         weapon = Weapon.objects.get(pk=1)

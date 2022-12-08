@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from powerrangers.rangers import constants
+from powerrangers.rangers.choices import Color
 from powerrangers.series.models import Series
 from powerrangers.weapons.models import Weapon
 from powerrangers.zords.models import Zord
@@ -10,7 +10,7 @@ from powerrangers.zords.models import Zord
 
 class Ranger(models.Model):
     name = models.CharField(max_length=64, unique=True)
-    color = models.CharField(max_length=16, choices=constants.RANGER_COLORS)
+    color = models.CharField(max_length=16, choices=Color.choices)
     series = models.ManyToManyField(Series, through='Appearance')
 
     def __str__(self):

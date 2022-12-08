@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 
     # Packages
     'drf_spectacular',
+    'graphene_django',
     'rest_framework',
     'rest_framework.authtoken',
 
@@ -128,6 +129,12 @@ DATABASES = {
     'default': env.db_url('DATABASE_URL', default=f'sqlite:///{BASE_DIR}/db.sqlite3')
 }
 
+# Graphene
+
+GRAPHENE = {
+    'SCHEMA': 'powerrangers.core.schema.schema',
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -181,4 +188,9 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'Power Rangers API',
     'VERSION': env.str('VERSION', default=None),
     'SERVE_INCLUDE_SCHEMA': False,
+    'ENUM_NAME_OVERRIDES': {
+        'VillainCategory': 'powerrangers.villains.choices.Category.choices',
+        'WeaponCategory': 'powerrangers.weapons.choices.Category.choices',
+        'ZordCategoryEnum': 'powerrangers.zords.choices.Category.choices',
+    }
 }

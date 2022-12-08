@@ -1,7 +1,7 @@
 from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from powerrangers.rangers import constants
+from powerrangers.rangers.choices import Color
 from powerrangers.rangers.models import Ranger
 
 
@@ -46,7 +46,7 @@ class RangerTestCase(TestCase):
         ranger = Ranger.objects.get(pk=1)
         self.assertIsInstance(ranger, Ranger)
         self.assertEqual(ranger.name, 'Red Ranger')
-        self.assertEqual(ranger.color, constants.RANGER_COLOR_RED)
+        self.assertEqual(ranger.color, Color.RED)
 
         series = ranger.appearance_set.all()[0]
         self.assertEqual(str(series), 'Red Ranger (Mighty Morphin Power Rangers (Season 1))')

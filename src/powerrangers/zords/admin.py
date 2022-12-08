@@ -13,5 +13,5 @@ class ModeInlineAdmin(admin.StackedInline):
 class ZordAdmin(admin.ModelAdmin):
     form = ZordAdminForm
     inlines = (ModeInlineAdmin,)
-    list_display = ('name', 'type',)
-    list_filter = ('type',)
+    list_display = ('name', 'category',)
+    list_filter = ('category',)

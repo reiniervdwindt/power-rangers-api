@@ -2,13 +2,13 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from powerrangers.zords import constants
+from powerrangers.zords.choices import Category
 
 
 class Zord(models.Model):
     name = models.CharField(max_length=64, unique=True)
     description = models.TextField()
-    type = models.CharField(max_length=32, choices=constants.ZORD_TYPES)
+    category = models.CharField(max_length=32, choices=Category.choices)
     parts = models.ManyToManyField('Zord', blank=True)
 
     class Meta:
