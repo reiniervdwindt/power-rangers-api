@@ -18,7 +18,7 @@ class ZordRangerSerializer(serializers.ModelSerializer):
 
 class SubZordSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('id', 'name', 'description', 'type',)
+        fields = ('id', 'name', 'description', 'category',)
         model = Zord
 
 
@@ -28,5 +28,5 @@ class ZordSerializer(serializers.ModelSerializer):
     pilots = ZordRangerSerializer(many=True)
 
     class Meta:
-        fields = ('id', 'name', 'description', 'type', 'modes', 'parts', 'pilots',)
+        fields = ('id', 'name', 'description', 'category', 'modes', 'parts', 'pilots',)
         model = Zord

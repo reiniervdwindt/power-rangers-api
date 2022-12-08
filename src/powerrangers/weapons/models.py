@@ -1,11 +1,11 @@
 from django.db import models
 
-from powerrangers.weapons import constants
+from powerrangers.weapons.choices import Category
 
 
 class Weapon(models.Model):
     name = models.CharField(max_length=64, unique=True)
-    type = models.CharField(max_length=16, choices=constants.WEAPONS)
+    category = models.CharField(max_length=16, choices=Category.choices)
     parts = models.ManyToManyField('Weapon', blank=True)
 
     class Meta:

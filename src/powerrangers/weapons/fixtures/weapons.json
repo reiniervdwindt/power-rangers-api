@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "name": "Dragon Dagger",
-            "type": "dagger",
+            "category": "dagger",
             "parts": []
         }
     },
@@ -13,7 +13,7 @@
         "pk": 2,
         "fields": {
             "name": "Power Axe",
-            "type": "dagger",
+            "category": "dagger",
             "parts": []
         }
     },
@@ -22,7 +22,7 @@
         "pk": 3,
         "fields": {
             "name": "Power Blaster",
-            "type": "dagger",
+            "category": "dagger",
             "parts": [
                 2,
                 4,
@@ -37,7 +37,7 @@
         "pk": 4,
         "fields": {
             "name": "Power Bow",
-            "type": "dagger",
+            "category": "dagger",
             "parts": []
         }
     },
@@ -46,7 +46,7 @@
         "pk": 5,
         "fields": {
             "name": "Power Daggers",
-            "type": "dagger",
+            "category": "dagger",
             "parts": []
         }
     },
@@ -55,7 +55,7 @@
         "pk": 6,
         "fields": {
             "name": "Power Lance",
-            "type": "dagger",
+            "category": "dagger",
             "parts": []
         }
     },
@@ -64,7 +64,7 @@
         "pk": 7,
         "fields": {
             "name": "Power Sword",
-            "type": "sword",
+            "category": "sword",
             "parts": []
         }
     }

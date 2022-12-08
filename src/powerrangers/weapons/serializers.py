@@ -5,5 +5,5 @@ from powerrangers.weapons.models import Weapon
 
 class WeaponSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('id', 'name', 'type', 'parts')
+        fields = ('id', 'name', 'category', 'parts')
         model = Weapon

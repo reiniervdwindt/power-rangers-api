@@ -1,7 +1,7 @@
 from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from powerrangers.zords import constants
+from powerrangers.zords.choices import Category
 from powerrangers.zords.models import Zord
 
 
@@ -34,8 +34,8 @@ class ZordTestCase(TestCase):
         self.assertIn('description', resp.data)
         self.assertRegexpMatches(resp.data['description'], '^The Megazord')
 
-        self.assertIn('type', resp.data)
-        self.assertEqual(resp.data['type'], 'dinozord')
+        self.assertIn('category', resp.data)
+        self.assertEqual(resp.data['category'], 'dinozord')
 
     def test_zord_not_found(self):
         resp = self.client.get(reverse('zords-detail', kwargs=dict(pk=9999)))
@@ -46,7 +46,7 @@ class ZordTestCase(TestCase):
         zord = Zord.objects.get(pk=18)
         self.assertIsInstance(zord, Zord)
         self.assertEqual(zord.name, 'Unicorn Thunderzord')
-        self.assertEqual(zord.type, constants.ZORD_TYPE_THUNDERZORD)
+        self.assertEqual(zord.category, Category.THUNDERZORD)
 
     def test_zord_to_string(self):
         zord = Zord.objects.get(pk=1)
@@ -56,7 +56,7 @@ class ZordTestCase(TestCase):
         zord = Zord.objects.get(pk=19)
         self.assertIsInstance(zord, Zord)
         self.assertEqual(zord.name, 'White Tigerzord')
-        self.assertEqual(zord.type, constants.ZORD_TYPE_THUNDERZORD)
+        self.assertEqual(zord.category, Category.THUNDERZORD)
 
         mode = zord.modes.first()
         self.assertEqual(mode.id, 1)

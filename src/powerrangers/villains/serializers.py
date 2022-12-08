@@ -14,5 +14,5 @@ class VillainSeriesSerializer(serializers.ModelSerializer):
 
 class VillainSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('id', 'name', 'description', 'gender', 'type', 'homeworld',)
+        fields = ('id', 'name', 'description', 'gender', 'category', 'homeworld',)
         model = Villain

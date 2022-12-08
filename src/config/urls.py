@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import RedirectView
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView
+from graphene_django.views import GraphQLView
 from rest_framework import routers
 
 from powerrangers.allies.views import AllyModelViewSet
@@ -32,7 +34,8 @@ urlpatterns = [
     path('schema', SpectacularAPIView.as_view(), name='schema'),
     path('docs', SpectacularRedocView.as_view(url_name='schema'), name='docs'),
     path('admin/', admin.site.urls),
-    path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico'))
+    path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico')),
+    path("graphql", csrf_exempt(GraphQLView.as_view(graphiql=True))),
 ]
 
 router = routers.DefaultRouter(trailing_slash=False)
@@ -43,7 +46,7 @@ router.register('monsters', MonsterModelViewSet, basename='monsters')
 router.register('rangers', RangerModelViewSet, basename='rangers')
 router.register('seasons', SeasonModelViewSet, basename='seasons')
 router.register('series', SeriesModelViewSet, basename='series')
-router.register('series/(?P<series_pk>[^/.]+)/seasons', SeasonModelViewSet, basename='series-seasons')
+router.register('series/(?P<parent>[^/.]+)/seasons', SeasonModelViewSet, basename='series-seasons')
 router.register('villains', VillainModelViewSet, basename='villains')
 router.register('weapons', WeaponModelViewSet, basename='weapons')
 router.register('zords', ZordModelViewSet, basename='zords')

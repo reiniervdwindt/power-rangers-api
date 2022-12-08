@@ -7,5 +7,5 @@ from powerrangers.weapons.models import Weapon
 @admin.register(Weapon)
 class WeaponAdmin(admin.ModelAdmin):
     form = WeaponAdminForm
-    list_display = ('name', 'type',)
-    list_filter = ('type',)
+    list_display = ('name', 'category',)
+    list_filter = ('category',)

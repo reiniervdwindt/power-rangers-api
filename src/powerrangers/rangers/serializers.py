@@ -7,17 +7,17 @@ from powerrangers.zords.models import Zord
 
 class RangerWeaponSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('id', 'name', 'type',)
+        fields = ('id', 'name', 'category',)
         model = Weapon
 
 
 class RangerZordSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('id', 'name', 'type',)
+        fields = ('id', 'name', 'category',)
         model = Zord
 
 
-class SeriesSerializer(serializers.ModelSerializer):
+class AppearanceSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source='series')
     weapon = RangerWeaponSerializer()
     zord = RangerZordSerializer()
@@ -28,7 +28,7 @@ class SeriesSerializer(serializers.ModelSerializer):
 
 
 class RangerSerializer(serializers.ModelSerializer):
-    series = SeriesSerializer(source='appearance_set', many=True)
+    series = AppearanceSerializer(source='appearance_set', many=True)
 
     class Meta:
         fields = ('id', 'name', 'color', 'series',)
