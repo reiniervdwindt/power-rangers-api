@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "powerrangers"
-version = "0.1.2"
+version = "0.2.0"
 description = "Power Rangers API"
 authors = ["Reinier van der Windt <reiniervdwindt@gmail.com>"]
 license = "MIT"
